@@ -36,9 +36,10 @@ class App {
     let futureFileChooser = await this.page.waitForFileChooser();
     await new Promise((res) => setTimeout(res, 1000));
     await this.page.click("#execute");
-    // let fileChooser = await futureFileChooser;
-    //console.log("fileChooser = ", fileChooser);
-    //await fileChooser.accept(["/test.txt"]);
+    // TimeoutError: Waiting for `FileChooser` failed: 30000ms exceeded
+    let fileChooser = await futureFileChooser;
+    console.log("fileChooser = ", fileChooser);
+    await fileChooser.accept(["/test.txt"]);
   }
 }
 new App();
