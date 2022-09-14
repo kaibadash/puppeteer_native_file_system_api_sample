@@ -1,4 +1,5 @@
 document.getElementById("execute").onclick = () => {
+  console.log("clocked");
   let dirHandle = window.showDirectoryPicker();
   console.log(dirHandle);
 
